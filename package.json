@@ -4,7 +4,7 @@
   "description": "I test create-react-library",
   "author": "Thibaud Cournollet",
   "license": "y",
-  "repository": "Thibaud Cournollet/my-first-lib",
+  "repository": "cournoll/my-first-lib",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
