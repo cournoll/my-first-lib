@@ -24,7 +24,3 @@ class Example extends Component {
   }
 }
 ```
-
-## License
-
-y © [Thibaud Cournollet](https://github.com/cournoll)
