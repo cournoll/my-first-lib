@@ -7,7 +7,7 @@ import {
 import { createHttpLink } from 'apollo-link-http'
 import { setContext } from 'apollo-link-context'
 
-const apolloClient = (url, auth, language) => {
+const apolloClient = (url, authFunc, language) => {
   const fragmentMatcher = new IntrospectionFragmentMatcher({
     introspectionQueryResultData: {
       __schema: {
@@ -33,6 +33,14 @@ const apolloClient = (url, auth, language) => {
   const link = createHttpLink({ uri: url, useGETForQueries: false })
 
   const authLink = setContext(async (_, { headers }) => {
+    let auth = {}
+    try {
+      auth = await authFunc()
+    } catch (e) {
+      // TODO : remove existing auth storage
+      console.log({ e })
+    }
+
     return {
       headers: {
         ...headers,
