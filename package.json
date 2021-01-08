@@ -1,17 +1,13 @@
 {
   "name": "my-first-lib",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "I test create-react-library",
   "author": "Thibaud Cournollet",
   "license": "y",
   "repository": "cournoll/my-first-lib",
   "main": "dist/index.js",
-  "source": "src/*.js",
-  "exports": {
-		".": "./dist/index.modern.js", 
-		"./graphql": "./dist/graphql.modern.js", 
-		"./hooks": "./dist/hooks.modern.js" 
-	},
+  "module": "dist/index.modern.js",
+  "source": "src/index.js",
   "engines": {
     "node": ">=10"
   },
